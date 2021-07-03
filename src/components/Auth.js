@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import API from "../ApiService";
 import { useCookies } from "react-cookie";
-import  { Redirect } from 'react-router-dom'
+import { useHistory } from "react-router-dom";
 
 
 const Auth = () => {
+  let history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -17,9 +18,9 @@ const Auth = () => {
 
     if (token["mr-token"]) 
     {
-      return <Redirect to='/movies'  />
+      history.push('/movies')
     }
-    
+    console.log("nothing")
   }, [token]);
 
 const checkToken= (resp) =>{
