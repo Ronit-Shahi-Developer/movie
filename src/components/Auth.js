@@ -23,6 +23,7 @@ const checkToken= (resp) =>{
   }
 }
   const loginClicked = () => {
+    console.log("login is is clicked")
     API.loginUser({ username, password })
       .then((resp) => checkToken(resp))
 
