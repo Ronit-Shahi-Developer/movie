@@ -9,7 +9,7 @@ import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
 
 function App() {
-const [token, setToken, deleteToken] = useCookies(['mr-token']);
+const [token, deleteToken] = useCookies(['mr-token']);
 
   const [movies, setMovies] = useState([]);
   const [selectedMovie, setSelectedMovie] = useState();
