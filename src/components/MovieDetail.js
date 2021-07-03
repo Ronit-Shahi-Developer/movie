@@ -15,7 +15,7 @@ const MovieDetail = (props) => {
   };
 
   const rateClicked = (rate) => (eve) => {
-    fetch(`http://127.0.0.1:8000/api/movies/${mov.id}/rate_movie/`, {
+    fetch(`${process.env.REACT_APP_API_URL}/${mov.id}/rate_movie/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ const MovieDetail = (props) => {
   };
 
   const getDetails = () => {
-    fetch(`http://127.0.0.1:8000/api/movies/${mov.id}/`, {
+    fetch(`${process.env.REACT_APP_API_URL}/${mov.id}/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
