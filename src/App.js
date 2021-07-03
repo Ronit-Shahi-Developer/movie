@@ -16,6 +16,7 @@ const [token, setToken, deleteToken] = useCookies(['mr-token']);
   const [editedMovie, setEditedMovie] = useState(null);
 
   useEffect(() => {
+    console.log(`${process.env.REACT_APP_API_URL}`)
     fetch(`${process.env.REACT_APP_API_URL}/api/movies/`, {
       method: "GET",
       headers: {
