@@ -12,6 +12,8 @@ const Auth = () => {
   const [token, setToken] = useCookies(["mr-token"]);
 
   useEffect(() => {
+    console.log(`${process.env.REACT_APP_API_URL}`)
+
     if (token["mr-token"]) window.location.href = "/movies";
   }, [token]);
 
