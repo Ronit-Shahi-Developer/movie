@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "../ApiService";
 import { useCookies } from "react-cookie";
+import  { Redirect } from 'react-router-dom'
 
 
 const Auth = () => {
@@ -14,7 +15,11 @@ const Auth = () => {
   useEffect(() => {
     console.log(`${process.env.REACT_APP_API_URL}`)
 
-    if (token["mr-token"]) window.location.href = "/movies";
+    if (token["mr-token"]) 
+    {
+      return <Redirect to='/movies'  />
+    }
+    
   }, [token]);
 
 const checkToken= (resp) =>{
@@ -43,7 +48,7 @@ const checkToken= (resp) =>{
     <div className="App">
 
 <header className="App-header">
-           {isLoginView ? <h1>Login Userssssssss</h1> : <h1>Register</h1>}
+           {isLoginView ? <h1>Login Users</h1> : <h1>Register</h1>}
 
       </header>
       <div className="login-container">
