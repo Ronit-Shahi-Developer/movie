@@ -14,12 +14,12 @@ const MovieDetail = (props) => {
     setHighlighted(high);
   };
 
-  const rateClicked = (rate) => (eve) => {
-    fetch(`${process.env.REACT_APP_API_URL}/${mov.id}/rate_movie/`, {
+  const rateClicked = (rate) => (evt) => {
+    fetch(`https://movie-rater-v1.herokuapp.com/api/movies/${mov.id}/rate_movie/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Token ${token["mr-token"]}`,
+        Authorization: `Token ${token['mr-token']}`,
       },
       body: JSON.stringify({
         stars: rate + 1,
@@ -30,11 +30,13 @@ const MovieDetail = (props) => {
   };
 
   const getDetails = () => {
-    fetch(`${process.env.REACT_APP_API_URL}/${mov.id}/`, {
+    // console.log(`${token}`)
+    
+    fetch(`${process.env.REACT_APP_API_URL}/api/movies/${mov.id}/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Token ${token["mr-token"]}`,
+        Authorization: `Token ${token['mr-token']}`,
       },
     })
       .then((resp) => resp.json()) //convert to json
