@@ -40,7 +40,7 @@ const checkToken= (resp) =>{
     <div className="App">
 
 <header className="App-header">
-           {isLoginView ? <h1>Login</h1> : <h1>Register</h1>}
+           {isLoginView ? <h1>Login User</h1> : <h1>Register</h1>}
 
       </header>
       <div className="login-container">
